@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Mandali&family=Tenali+Ramakrishna&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mallanna', sans-serif;
+}
+.message{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 10px;
+    background-color: #efef;
+    text-align: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+body{
+   
+    background: #101010;
+}
+.form-container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #acabf033, rgba(214, 213, 220, 0.1));
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+.form-container form{
+    width: 400px;
+    border-radius: 10px;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    background: #101010;
+    padding: 2rem;
+}
+.form-container form input{
+    padding: .5rem;
+}
+h3{
+    color: #efef;
+}
+p{
+    color: rgb(140, 143, 140);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.containers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh; 
+    z-index: 1000;
+    background-color: #1a1a1a;
+    
+}
+.loader{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(to top, #1a1a1a 40%, #c3c3c3);
+    border-radius: 50%;
+    animation: animateRotate 2s linear infinite;
+}
+.loader::before{
+    content: "";
+    position: absolute;
+    background: #1a1a1a;
+    inset: 20px 20px 0 0;
+    border-radius: 50%;
+}
+.loader::after{
+    content: "";
+    position: absolute;
+    top: 50px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #c3c3c3, 0 0 25px #c3c3c3, 0 0 50px #c3c3c3, 0 0 65px #c3c3c3;
+}
+
+
+@keyframes animateRotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.disppear{
+    animation: vanish 2s forwards;
+}
+@keyframes vanish{ 
+   100%{ 
+       opacity: 1.5;
+       visibility: hidden;
+   }
+}

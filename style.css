@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Mandali&family=Tenali+Ramakrishna&display=swap');
+
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mallanna', sans-serif;
+}
+
+:root{
+    --text-color: #efefef;
+    --bg-color: #101010;
+    --bg-linear-gradient: linear-gradient(135deg, rgba(87, 163, 240, 0.1), rgba(217, 49, 49, 0));
+}
+
+
+
+.containers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh; 
+    z-index: 1000;
+    background-color: #1a1a1a;
+    
+}
+.loader{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(to top, #1a1a1a 40%, #c3c3c3);
+    border-radius: 50%;
+    animation: animateRotate 2s linear infinite;
+}
+.loader::before{
+    content: "";
+    position: absolute;
+    background: #1a1a1a;
+    inset: 20px 20px 0 0;
+    border-radius: 50%;
+}
+.loader::after{
+    content: "";
+    position: absolute;
+    top: 50px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #c3c3c3, 0 0 25px #c3c3c3, 0 0 50px #c3c3c3, 0 0 65px #c3c3c3;
+}
+
+
+@keyframes animateRotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.disppear{
+    animation: vanish 3s forwards;
+}
+@keyframes vanish{ 
+   100%{ 
+       opacity: 1.5;
+       visibility: hidden;
+   }
+}
+
+
+
+body{
+    padding: 0;
+    margin: 0; 
+    background-color: var(--bg-color);
+    position: relative;
+}
+body:before{
+    content: "";
+    height:100vh;
+    width: 40%;
+    position: absolute;
+    background: #efef;
+    top: 0;
+    right: 0;
+}
+header{ 
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+nav.scrolled{
+    background: var(--bg-linear-gradient);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.logo{
+    font-size: 30px;
+    color: #cdcaca;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Mallanna', sans-serif;
+    padding: 0 4rem;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin:0 1rem;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #474646
+}
+.navbar ul li a:hover{
+    color: #cdcaca;
+}
+.navbar .menu-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.drop-down{
+    border-radius: 5px;
+    display: none;
+    z-index: 20;
+}
+.image-logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.drop-down ul{
+    padding: 0;
+    margin: 1rem 0;
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    right: 1rem;
+
+}
+.drop-down ul:before{
+    content: "";
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 39%;
+    transform: rotate(135deg);
+    z-index: -10;
+}
+.drop-down ul li{
+    list-style: none;
+    padding: 10px 20px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.drop-down ul li:hover{
+    background: #7c7b7b;
+}
+.contain.active .drop-down{
+    display: block;
+}
+.drop-down i{
+    margin-right: .4rem;
+}
+
+
+
+
+
+/**-----------------Home styling section ---------------------**/
+
+
+.container{
+    margin: 0 6rem;
+}
+
+.content-home{
+    color: #efef;
+    font-family: 'Mallanna', sans-serif;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.home-text{
+    padding: 5rem 0; 
+    line-height: 1rem;
+}
+.home-text h1{
+    font-size: 80px;
+}
+.home-text summary{
+    font-size: 40px;
+}
+.home-text p{
+    margin: 2rem 0;
+    color: #b5b2b2;
+    line-height: 1.5rem;
+}
+.read-more-btn{
+    background-color: #434242;
+    cursor: pointer;
+    padding: .6rem 1.5rem;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: #a3a0a0;
+}
+.read-more-btn:hover{
+    background-color: #676666;
+}
+.box{
+    position: relative;
+}
+.box-1{
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, rgba(22, 153, 235, 0.2), rgba(123, 121, 121, 0.1));
+    transform: rotate(110deg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 5rem;
+    cursor: pointer;
+    z-index: 20;
+    transition: .3s;
+}
+.box-1:hover{
+    transform: rotateX(180deg);
+}
+.box-1:before{
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(6, 2, 247, 0.2), rgba(48, 25, 223, 0.1));
+    transform: rotate(110deg);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    z-index: -1;
+    bottom: -20px;
+}
+.box-1:after{
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(6, 2, 247, 0.2), rgba(48, 25, 223, 0.1));
+    transform: rotate(110deg);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    z-index: -1;
+    right: -70px;
+}
+.moreText{
+    display:none; 
+}
+.text.show-more .moreText{
+    display: inline;
+}
+.icons{
+    position: relative;
+}
+.icons-list li{
+    list-style: none;
+    margin: 1rem;
+}
+.icons-list li a{
+    font-size: 20px;
+    color: #474646;
+}
+
+
+
+
+
+/**-----------------Skills styling section ---------------------**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .navbar ul li{
+        display: none;
+    }
+    .navbar img{
+        display: none;
+    }
+    .navbar{
+        padding: 0 1rem;
+    }
+    .container{
+        margin: 0 2rem;
+    }
+    .home-text h1 span{
+        font-size: 40px;
+    }
+    .content-home{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .box-1{
+        padding-left: 12rem;
+        width: 200px;
+    }
+    body:before{
+        content: "";
+        height:100vh;
+        width: 40%;
+        position: absolute;
+        background: rgb(218, 240, 244);
+        top: 0;
+        right: 0;
+    }
+  }
+
